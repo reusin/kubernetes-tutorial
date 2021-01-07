@@ -55,7 +55,7 @@ spec:
  ```
  
 ### 3. Mount Persistent Volume Claim to Pods
- 
+
 For this demonstration, the Persistent Volume Claim is mounted as a volume to pods running Nginx image in the deployment manifest .
  
  ```
@@ -94,7 +94,7 @@ spec:
  The interactive terminal in the Pod can be accessed, to take a look at the resources which were injected.
  
  ```
- kubectl -it exec pod/nginx-deployment-6f4dcc548d-4wtlb -- bash
+ kubectl -it exec pod/nginx-deployment-pod -- bash
  ```
  
  <img src="https://github.com/reusin/kubernetes-tutorial/blob/main/images/reallyverifyvolume.JPG"/>
