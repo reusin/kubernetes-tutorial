@@ -91,11 +91,13 @@ spec:
  
 ### 4. Just to be really sure if it works, let's take a look at <code>resources</code> inside the pod.
  
- The interactive terminal in the Pod can be accessed, to take a look at the resources which were injected.
+The interactive terminal in the Pod can be accessed, to take a look at the resources which were injected.
  
- ```
- kubectl -it exec pod/nginx-deployment-pod -- bash
- ```
+```
+kubectl -it exec pod/nginx-deployment-pod -- bash
+```
  
- <img src="https://github.com/reusin/kubernetes-tutorial/blob/main/images/reallyverifyvolume.JPG"/>
+<img src="https://github.com/reusin/kubernetes-tutorial/blob/main/images/reallyverifyvolume.JPG"/>
   
+### Reference
+[1] https://kubernetes.io/docs/concepts/storage/persistent-volumes
