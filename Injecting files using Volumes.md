@@ -12,6 +12,8 @@ For this demonstration, a Persistent Volume of <code>local</code> type will be u
 
 <b>Note</b>: Persistent Volumes with <code>hostPath</code> shouldn't be used for production as it only works for a single node cluster, however a <code>local</code> Persistent Volume can be used together with the <code>nodeAffinity</code> option.
 
+More about types of Persistent Volumes can be found <a href="https://kubernetes.io/docs/concepts/storage/persistent-volumes/#types-of-persistent-volumes">here</a>
+
 ```
 apiVersion: v1
 kind: PersistentVolume
@@ -38,7 +40,7 @@ spec:
   
  ### 2. Create a Persistent Volume Claim to bind with the Persistent Volume
  
- A Persistent Volume Claim binds to the Persistent Volume, and can be accessed by multiple pods. 
+A Persistent Volume Claim binds to the Persistent Volume, and can be accessed by multiple pods. If the cluster has dynamic volume provisioning enabled, assign the appropriate <code>storageClassName</code> as defined by the Cluster Administrator to dynamically have a volume bound to the Persistent Volume Claim. 
  
  ```
  apiVersion: v1
@@ -56,9 +58,9 @@ spec:
  
 ### 3. Mount Persistent Volume Claim to Pods
 
-For this demonstration, the Persistent Volume Claim is mounted as a volume to pods running Nginx image in the deployment manifest .
+For this demonstration, the Persistent Volume Claim is mounted as a volume to pods running Nginx image in the deployment manifest.
  
- ```
+```
  apiVersion: apps/v1
 kind: Deployment
 metadata:
