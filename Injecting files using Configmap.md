@@ -59,7 +59,7 @@ spec:
           name: rbac
 ```
 
-### 4. Just to be really sure if it works, let's take a look at <code>resources</code> inside the pod.
+### 3. Just to be really sure if it works, let's take a look at <code>resources</code> inside the pod.
 
 ```
 kubectl -it exec pod/<nginx-deployment-pod> -- bash
