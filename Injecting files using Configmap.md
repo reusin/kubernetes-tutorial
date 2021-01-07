@@ -59,12 +59,6 @@ spec:
           name: rbac
 ```
 
-### 3. Run the manifest file
-
-```
-kubectl apply -f deployment.yaml
-```
-
 ### 4. Just to be really sure if it works, let's take a look at <code>resources</code> inside the pod.
 
 ```
