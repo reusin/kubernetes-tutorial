@@ -1,10 +1,10 @@
-### Injecting Files into Pods using Configmaps
+## Injecting Files into Pods using Configmaps
 
 In the Image shown below, the contents inside <code>resources</code> are supposed to be injected into the pod. This tutorial explains how it can be achieved using Configmaps
 
 <img src="https://github.com/reusin/kubernetes-tutorial/blob/main/images/folder%20structure.JPG"/>
 
-1. Create the configmap
+### 1. Create the configmaps
 
 Create Configmaps for each base folder using <code>--from-file</code> option, which allows creation of configmaps from files and directories.
 
@@ -14,9 +14,9 @@ $ kubectl create configmap jaas --from-file resources/jaas/
 $ kubectl create configmap rbac --from-file resources/rbac/
 ```
 
-2. Mounting configmaps into a pod
+### 2. Mounting configmaps into a pod
 
-The configmaps can be mounted as volumes into pods as shown in the manifest file, below.
+The configmaps are mounted as volumes into pods as shown in the manifest file, below.
 
 ```
 apiVersion: apps/v1
@@ -59,13 +59,13 @@ spec:
           name: rbac
 ```
 
-3. Run the manifest file
+### 3. Run the manifest file
 
 ```
 kubectl apply -f deployment.yaml
 ```
 
-3. Let's try to access the files inside a pod, just to really sure about whether it worked by accessing the internal terminal.
+### 4. Just to be really sure if it works, let's take a look at <code>resources</code> inside the pod.
 
 ```
 kubectl -it exec pod/<nginx-deployment-pod> -- bash
