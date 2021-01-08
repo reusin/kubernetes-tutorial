@@ -1,0 +1,38 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: nginx-deployment
+  labels:
+    app: nginx
+spec:
+  replicas: 3
+  selector:
+    matchLabels:
+      app: nginx
+  template:
+    metadata:
+      labels:
+        app: nginx
+    spec:
+      containers:
+      - name: nginx
+        image: nginx:1.14.2
+        ports:
+        - containerPort: 80
+        volumeMounts:
+        - name: certs-secret
+          mountPath: /resources/certs/
+        - name: jaas-config
+          mountPath: /resources/jaas
+        - name: rbac-config
+          mountPath: /resources/rbac
+      volumes:
+      - name: certs-secret
+        secret:
+          secretName: certs
+      - name: jaas-config
+        configMap:
+          name: jaas
+      - name: rbac-config
+        configMap:
+          name: rbac
