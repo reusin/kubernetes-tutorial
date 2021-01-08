@@ -1,6 +1,6 @@
 ## Injecting Files into Pods using Secrets
 
-In the Image shown below, the contents inside <code>resources</code> are supposed to be injected into the pod. This can be performed using configMap and Volumes, however contents of <code>resources/certs</code> is sensitive and mounting a Kubernetes Secret object would be appropriate. This tutorial explains how it can be achieved.
+In the Image shown below, the contents inside <code>resources</code> are supposed to be injected into the pod. This can be performed using configMap and Volumes, however contents of <code>resources/certs</code> is sensitive and mounting it as a Kubernetes Secret object would be appropriate. This tutorial explains how it can be achieved.
 
 <img src="https://github.com/reusin/kubernetes-tutorial/blob/main/images/folder%20structure.JPG"/>
 
