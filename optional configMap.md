@@ -3,7 +3,7 @@
 The creation of a configMap can be condition based with the help of chart template as shown. Where these values are obtained from `values.yaml`.
 
 ```
-{{- if .Values.newSpecificConfig -}}
+{{- if .Values.enablenewConfig -}}
 apiVersion: v1
   data:
     {{- range .Values }}
@@ -22,6 +22,8 @@ apiVersion: v1
 In this example the literals to populate the configMap are mentioned as a list, as shown.
 
 ```
+enablenewConfig: true
+
 newSpecificConfig:
   - key: "fileName1"
     value: "foo.txt"
